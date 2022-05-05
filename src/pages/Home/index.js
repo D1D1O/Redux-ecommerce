@@ -1,170 +1,56 @@
-import React from 'react';
-import { MdAddShoppingCart } from 'react-icons/md'
+import React, {Component} from 'react';
+import { MdAddShoppingCart } from 'react-icons/md';
+import api from '../../services/api';
+import { formatPrice } from '../../util/format';
 
 import { ProductList } from './styles';
 
-function Home() {
-  return (
-    <ProductList>
-      <li>
-        <img
-          src="https://static.netshoes.com.br/produtos/tenis-nike-revolution-6-next-nature-masculino/26/2IC-4365-026/2IC-4365-026_zoom2.jpg?ts=1631636825&ims=100x"
-          alt="Tênis"
-        />
-        <strong>Tênis muito legal</strong>
-        <span>R$129,90</span>
+class Home extends Component {
+  state ={
+    products: [],
+  };
 
-        <button type="button">
-          <div>
-            <MdAddShoppingCart size={16} color="#FFF"></MdAddShoppingCart>
-            3
-          </div>
-          <span>ADICIONAR AO CARRINHO</span>
-        </button>
-      </li>
+  async componentDidMount(){
+    const response = await api.get('products');
+    const data = response.data.map(product => ({
+      ...product,
+      priceFormatted: formatPrice(product.price),
+    }));
 
-      <li>
-        <img
-          src="https://static.netshoes.com.br/produtos/tenis-nike-revolution-6-next-nature-masculino/26/2IC-4365-026/2IC-4365-026_zoom2.jpg?ts=1631636825&ims=100x"
-          alt="Tênis"
-        />
-        <strong>Tênis muito legal</strong>
-        <span>R$129,90</span>
+    this.setState({ products: data})
 
-        <button type="button">
-          <div>
-            <MdAddShoppingCart size={16} color="#FFF"></MdAddShoppingCart>
-            3
-          </div>
-          <span>ADICIONAR AO CARRINHO</span>
-        </button>
-      </li>
+    //console.log(this.state.products);
+  }
 
+  render(){
 
-      <li>
-        <img
-          src="https://static.netshoes.com.br/produtos/tenis-nike-revolution-6-next-nature-masculino/26/2IC-4365-026/2IC-4365-026_zoom2.jpg?ts=1631636825&ims=100x"
-          alt="Tênis"
-        />
-        <strong>Tênis muito legal</strong>
-        <span>R$129,90</span>
+    const { products } = this.state;
+    console.log(products);
 
-        <button type="button">
-          <div>
-            <MdAddShoppingCart size={16} color="#FFF"></MdAddShoppingCart>
-            3
-          </div>
-          <span>ADICIONAR AO CARRINHO</span>
-        </button>
-      </li>
+    return (
+      <ProductList>
 
-
-      <li>
-        <img
-          src="https://static.netshoes.com.br/produtos/tenis-nike-revolution-6-next-nature-masculino/26/2IC-4365-026/2IC-4365-026_zoom2.jpg?ts=1631636825&ims=100x"
-          alt="Tênis"
-        />
-        <strong>Tênis muito legal</strong>
-        <span>R$129,90</span>
-
-        <button type="button">
-          <div>
-            <MdAddShoppingCart size={16} color="#FFF"></MdAddShoppingCart>
-            3
-          </div>
-          <span>ADICIONAR AO CARRINHO</span>
-        </button>
-      </li>
-
-      <li>
-        <img
-          src="https://static.netshoes.com.br/produtos/tenis-nike-revolution-6-next-nature-masculino/26/2IC-4365-026/2IC-4365-026_zoom2.jpg?ts=1631636825&ims=100x"
-          alt="Tênis"
-        />
-        <strong>Tênis muito legal</strong>
-        <span>R$129,90</span>
-
-        <button type="button">
-          <div>
-            <MdAddShoppingCart size={16} color="#FFF"></MdAddShoppingCart>
-            3
-          </div>
-          <span>ADICIONAR AO CARRINHO</span>
-        </button>
-      </li>
-
-
-      <li>
-        <img
-          src="https://static.netshoes.com.br/produtos/tenis-nike-revolution-6-next-nature-masculino/26/2IC-4365-026/2IC-4365-026_zoom2.jpg?ts=1631636825&ims=100x"
-          alt="Tênis"
-        />
-        <strong>Tênis muito legal</strong>
-        <span>R$129,90</span>
-
-        <button type="button">
-          <div>
-            <MdAddShoppingCart size={16} color="#FFF"></MdAddShoppingCart>
-            3
-          </div>
-          <span>ADICIONAR AO CARRINHO</span>
-        </button>
-      </li>
-
-
-      <li>
-        <img
-          src="https://static.netshoes.com.br/produtos/tenis-nike-revolution-6-next-nature-masculino/26/2IC-4365-026/2IC-4365-026_zoom2.jpg?ts=1631636825&ims=100x"
-          alt="Tênis"
-        />
-        <strong>Tênis muito legal</strong>
-        <span>R$129,90</span>
-
-        <button type="button">
-          <div>
-            <MdAddShoppingCart size={16} color="#FFF"></MdAddShoppingCart>
-            3
-          </div>
-          <span>ADICIONAR AO CARRINHO</span>
-        </button>
-      </li>
-
-
-      <li>
-        <img
-          src="https://static.netshoes.com.br/produtos/tenis-nike-revolution-6-next-nature-masculino/26/2IC-4365-026/2IC-4365-026_zoom2.jpg?ts=1631636825&ims=100x"
-          alt="Tênis"
-        />
-        <strong>Tênis muito legal</strong>
-        <span>R$129,90</span>
-
-        <button type="button">
-          <div>
-            <MdAddShoppingCart size={16} color="#FFF"></MdAddShoppingCart>
-            3
-          </div>
-          <span>ADICIONAR AO CARRINHO</span>
-        </button>
-      </li>
-
-      <li>
-        <img
-          src="https://static.netshoes.com.br/produtos/tenis-nike-revolution-6-next-nature-masculino/26/2IC-4365-026/2IC-4365-026_zoom2.jpg?ts=1631636825&ims=100x"
-          alt="Tênis"
-        />
-        <strong>Tênis muito legal</strong>
-        <span>R$129,90</span>
-
-        <button type="button">
-          <div>
-            <MdAddShoppingCart size={16} color="#FFF"></MdAddShoppingCart>
-            3
-          </div>
-          <span>ADICIONAR AO CARRINHO</span>
-        </button>
-      </li>
-    </ProductList>
-  );
+        {
+        products.map(product =>(
+          <li key={product.id}>
+            <img
+            src={product.image}
+            alt={product.title}
+            />
+            <strong>{product.title}</strong>
+            <span>{product.priceFormatted} </span>
+            <button type="button">
+              <div>
+                <MdAddShoppingCart size={16} color="#FFF"></MdAddShoppingCart>
+                3
+              </div>
+              <span>ADICIONAR AO CARRINHO</span>
+            </button>
+          </li>
+        ))}
+      </ProductList>
+    );
+  }
 }
 
 export default Home;
