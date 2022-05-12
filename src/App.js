@@ -7,7 +7,8 @@ import './config/ReactotronConfig';
 import Header from "./components/Header";
 import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
-
+import history from "./services/history";
+import { Router } from "react-router-dom";
 import store from "./store";
 
 

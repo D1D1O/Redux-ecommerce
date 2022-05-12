@@ -43,8 +43,8 @@ function* updateAmount({id, amount}){
 
   const stock = yield call(api.get,`stock/${id}`);
   const stockAmount = stock.data.amount;
-  console.log(stock);
-  console.log(stockAmount);
+  //console.log(stock);
+  //console.log(stockAmount);
   
   if (amount > stockAmount){
     toast.error('Quantidade fora do estoque');
