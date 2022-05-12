@@ -12,7 +12,7 @@ A página será recarregada quando você fizer alterações.
 ![image](https://user-images.githubusercontent.com/31021190/165878403-c899f78a-dc54-408e-9e6c-a9df3728ff12.png)
 
 
-### `Pagina principal`
+### `Página principal`
 ![image](https://user-images.githubusercontent.com/31021190/167977060-3694aaf8-5f47-4d3a-9811-160ee69fec84.png)
 
 ### `Carrinho`
