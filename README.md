@@ -18,3 +18,6 @@ A página será recarregada quando você fizer alterações.
 ### `Carrinho`
 
 ![image](https://user-images.githubusercontent.com/31021190/167977165-e4b93fe3-b914-4061-b898-4a257b7835e2.png)
+
+
+### `Fluxo aplicação`
